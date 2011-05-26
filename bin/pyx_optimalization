@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+
+# Pragmas.
+use strict;
+use warnings;
+
+# Modules.
+use PYX::Optimalization;
+
+# Arguments.
+if ($#ARGV < 0) {
+	print "Usage: $0 [filename] [-]\n";
+	print "\tfilename\tprocess on filename\n";
+	print "\t-\t\tprocess on stdin\n";
+	exit 1;
+}
+
+# PYX::Optimalization object.
+my $optimalizer = PYX::Optimalization->new;
+
+# Parse from stdin.
+if ($ARGV[0] eq '-') {
+	$optimalizer->parse_handler(\*STDIN);
+
+# Parse file.
+} else {
+	$optimalizer->parse_file($ARGV[0]);
+}
