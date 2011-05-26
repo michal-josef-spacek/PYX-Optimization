@@ -1,0 +1,15 @@
+bin/pyx_optimalization
+CHANGES
+Makefile.PL
+MANIFEST			This list of files
+Optimalization.pm
+t/data/ex1.pyx
+t/data/ex2.pyx
+t/data/ex3.pyx
+t/data/ex4.pyx
+t/PYX::Optimalization/00-use.t
+t/PYX::Optimalization/01-version.t
+t/PYX::Optimalization/02-pod_coverage.t
+t/PYX::Optimalization/03-pod.t
+t/PYX::Optimalization/04-constructor.t
+t/PYX::Optimalization/05-parse.t
