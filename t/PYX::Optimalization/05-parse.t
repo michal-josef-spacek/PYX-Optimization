@@ -23,7 +23,7 @@ _comment
 END
 stdout_is(
 	sub {
-		$obj->parse_file($data_dir->file('example1.pyx')->s);
+		$obj->parse_file($data_dir->file('ex1.pyx')->s);
 		return;
 	},
 	$right_ret,
@@ -40,7 +40,7 @@ $right_ret = <<"END";
 END
 stdout_is(
 	sub {
-		$obj->parse_file($data_dir->file('example2.pyx')->s);
+		$obj->parse_file($data_dir->file('ex2.pyx')->s);
 		return;
 	},
 	$right_ret,
@@ -57,7 +57,7 @@ Aattr value
 END
 stdout_is(
 	sub {
-		$obj->parse_file($data_dir->file('example3.pyx')->s);
+		$obj->parse_file($data_dir->file('ex3.pyx')->s);
 		return;
 	},
 	$right_ret,
@@ -74,7 +74,7 @@ $right_ret = <<"END";
 END
 stdout_is(
 	sub {
-		$obj->parse_file($data_dir->file('example4.pyx')->s);
+		$obj->parse_file($data_dir->file('ex4.pyx')->s);
 		return;
 	},
 	$right_ret,
