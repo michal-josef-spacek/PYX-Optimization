@@ -8,21 +8,22 @@ use warnings;
 use PYX::Optimalization;
 
 # Arguments.
-if ($#ARGV < 0) {
-	print "Usage: $0 [filename] [-]\n";
-	print "\tfilename\tprocess on filename\n";
-	print "\t-\t\tprocess on stdin\n";
+if (@ARGV < 1) {
+	print STDERR "Usage: $0 [filename] [-]\n";
+	print STDERR "\tfilename\tprocess on filename\n";
+	print STDERR "\t-\t\tprocess on stdin\n";
 	exit 1;
 }
+my $filename_or_stdin = $ARGV[0];
 
 # PYX::Optimalization object.
 my $optimalizer = PYX::Optimalization->new;
 
 # Parse from stdin.
-if ($ARGV[0] eq '-') {
+if ($filename_or_stdin eq '-') {
 	$optimalizer->parse_handler(\*STDIN);
 
 # Parse file.
 } else {
-	$optimalizer->parse_file($ARGV[0]);
+	$optimalizer->parse_file($filename_or_stdin);
 }
