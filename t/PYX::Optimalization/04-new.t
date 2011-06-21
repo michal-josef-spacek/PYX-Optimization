@@ -20,3 +20,6 @@ eval {
 	);
 };
 is($EVAL_ERROR, "Unknown parameter 'something'.\n");
+
+# Test.
+# TODO Regular test.
