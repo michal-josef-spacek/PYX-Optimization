@@ -22,6 +22,7 @@ WriteMakefile(
 	'EXE_FILES' => [
 		'bin/pyx_optimalization',
 	],
+	'LICENSE' => 'bsd',
 	'NAME' => 'PYX::Optimalization',
 	'PREREQ_PM' => {
 		'Class::Utils' => 0.01,
