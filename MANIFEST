@@ -1,8 +1,21 @@
 bin/pyx_optimalization
 Changes
+inc/Module/Install.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/ReadmeFromPod.pm
+inc/Module/Install/Scripts.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+Makefile.PL
 makefile.PL
 MANIFEST			This list of files
+META.yml
 Optimalization.pm
+README
 t/data/ex1.pyx
 t/data/ex2.pyx
 t/data/ex3.pyx
