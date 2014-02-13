@@ -41,7 +41,7 @@ EXAMPLE
      );
 
 DEPENDENCIES
-    Class::Utils(3pm), Error::Pure(3pm), PYX::Utils(3pm).
+    Class::Utils, Error::Pure, PYX::Utils.
 
 SEE ALSO
     TODO
