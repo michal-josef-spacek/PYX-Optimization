@@ -20,6 +20,7 @@ t/data/ex1.pyx
 t/data/ex2.pyx
 t/data/ex3.pyx
 t/data/ex4.pyx
+t/data/ex5.pyx
 t/PYX-Optimalization/00-use.t
 t/PYX-Optimalization/01-version.t
 t/PYX-Optimalization/02-pod_coverage.t
