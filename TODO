@@ -2,7 +2,8 @@ TODO
 ====
 1. PYX::Optimalization navazat na dtd (preserve).
 2. Prepinac pro odstraneni namespace, ktere se tady nepouzivaji.
-3.
+3. bin/pyx_optimalization pryc.
+4.
 
 Applied
 =======
