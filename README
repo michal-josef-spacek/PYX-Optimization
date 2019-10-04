@@ -29,11 +29,9 @@ ERRORS
        Unknown parameter '%s'.
 
 EXAMPLE
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use PYX::Optimalization;
 
      # PYX::Optimalization object.

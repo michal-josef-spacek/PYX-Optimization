@@ -1,17 +1,14 @@
 package PYX::Optimalization;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX qw(char comment);
 use PYX::Parser;
 use PYX::Utils qw(encode decode);
 
-# Version.
 our $VERSION = 0.01;
 
 # Constructor.
@@ -149,11 +146,9 @@ TODO
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use PYX::Optimalization;
 
  # PYX::Optimalization object.
