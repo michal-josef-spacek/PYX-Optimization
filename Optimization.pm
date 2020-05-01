@@ -26,8 +26,10 @@ sub new {
 	$self->{'pyx_parser'} = PYX::Parser->new(
 		'output_handler' => $self->{'output_handler'},
 		'output_rewrite' => 1,
-		'data' => \&_data,
-		'comment' => \&_comment,
+		'callbacks' => {
+			'data' => \&_data,
+			'comment' => \&_comment,
+		},
 	);
 
 	# Object.
@@ -42,8 +44,8 @@ sub parse {
 
 # Parse file with pyx text.
 sub parse_file {
-	my ($self, $file) = @_;
-	$self->{'pyx_parser'}->parse_file($file);
+	my ($self, $file, $out) = @_;
+	$self->{'pyx_parser'}->parse_file($file, $out);
 }
 
 # Parse from handler.
@@ -100,79 +102,152 @@ __END__
 
 =head1 NAME
 
-PYX::Optimization - Class for
+PYX::Optimization - PYX optimization Perl class.
 
 =head1 SYNOPSIS
 
-TODO
+ use PYX::Optimization;
+
+ my $obj = PYX::Parser->new(%parameters);
+ $obj->parse($pyx, $out);
+ $obj->parse_file($pyx_file, $out);
+ $obj->parse_handle($pyx_file_handler, $out);
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new(%parameters)>
+ my $obj = PYX::Parser->new(%parameters);
 
- Constructor.
+Constructor.
+
+Returns instance of object.
 
 =over 8
 
 =item * C<output_handler>
 
-TODO
+Output handler.
+Default value is STDOUT.
 
 =back
 
-=item C<parse()>
+=head2 C<parse>
 
-TODO
+ $obj->parse($pyx, $out);
 
-=item C<parse_file()>
+Optimize PYX string $pyx.
+Output print to output handler.
+If $out not present, use 'output_handler'.
 
-TODO
+Returns undef.
 
-=item C<parse_handler()>
+=head2 C<parse_file>
 
-TODO
+ $obj->parse_file($pux_file, $out);
 
-=back
+Optimize PYX file $pyx_file.
+Output print to output handler.
+If $out not present, use 'output_handler'.
+
+Returns undef.
+
+=head2 C<parse_handler>
+
+ $obj->parse_handle($pyx_file_handler, $out);
+
+Optimize PYX file handler $pyx_file_handler.
+Output print to output handler.
+If $out not present, use 'output_handler'.
+
+Returns undef.
 
 =head1 ERRORS
 
- Mine:
-   TODO
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
 
- From Class::Utils::set_params():
-   Unknown parameter '%s'.
-
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
  use strict;
  use warnings;
 
  use PYX::Optimization;
 
- # PYX::Optimization object.
- my $pyx = PYX::Optimization->new(
-   TODO
- );
+ # Content.
+ my $pyx_to_optimize = <<'END';
+ (element
+ - data \n data
+ )element
+ _       comment
+ (element
+ -                                 \n foo
+ )element
+ END
+
+ PYX::Optimization->new->parse($pyx_to_optimize);
+
+ # Output:
+ # (element
+ # -data data
+ # )element
+ # _comment
+ # (element
+ # -foo
+ # )element
+
+=head1 EXAMPLE2
+
+ use strict;
+ use warnings;
+
+ use PYX::Optimization;
+
+ if (@ARGV < 1) {
+         print STDERR "Usage: $0 pyx_file\n";
+         exit 1;
+ }
+ my $pyx_file = $ARGV[0];
+
+ PYX::Optimization->new->parse_file($pyx_file);
+
+ # Output:
+ # Usage: __SCRIPT__ pyx_file
 
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
 L<Error::Pure>,
+L<PYX>,
+L<PYX::Parser>,
 L<PYX::Utils>.
 
 =head1 SEE ALSO
 
-TODO
+=over
+
+=item L<Task::PYX>
+
+Install the PYX modules.
+
+=back
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/PYX-Optimization>
 
 =head1 AUTHOR
 
-Michal Špaček L<skim@cpan.org>.
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 
-BSD license.
+© 2011-2020 Michal Josef Špaček
+
+BSD 2-Clause License
 
 =head1 VERSION
 
