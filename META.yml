@@ -22,6 +22,7 @@ meta-spec:
 name: PYX-Optimalization
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
