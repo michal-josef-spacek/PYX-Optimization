@@ -4,11 +4,11 @@ use warnings;
 use inc::Module::Install;
 
 # Definition.
-abstract 'TODO';
+abstract '';
 author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
-name 'PYX-Optimalization';
-readme_from 'Optimalization.pm';
+name 'PYX-Optim';
+readme_from 'Optimization.pm';
 requires 'Class::Utils' => 0.05;
 requires 'Error::Pure' => 0.15;
 requires 'PYX' => 0.01;
@@ -16,9 +16,9 @@ requires 'PYX::Parser' => 0.01;
 requires 'PYX::Utils' => 0.01;
 requires 'perl' => '5.6.2';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
-	'?Name=PYX-Optimalization';
-resources 'homepage' => 'https://github.com/tupinek/PYX-Optimalization';
-resources 'repository' => 'git://github.com/tupinek/PYX-Optimalization';
+	'?Name=PYX-Optimization';
+resources 'homepage' => 'https://github.com/tupinek/PYX-Optimization';
+resources 'repository' => 'git://github.com/tupinek/PYX-Optimization';
 test_requires 'English' => 0;
 test_requires 'File::Object' => 0.07;
 test_requires 'Test::More' => 0;

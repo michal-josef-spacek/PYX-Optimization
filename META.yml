@@ -1,5 +1,5 @@
 ---
-abstract: TODO
+abstract: ''
 author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:
@@ -19,7 +19,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: PYX-Optimalization
+name: PYX-Optim
 no_index:
   directory:
     - examples
@@ -34,8 +34,8 @@ requires:
   PYX::Utils: 0.01
   perl: 5.6.2
 resources:
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PYX-Optimalization
-  homepage: https://github.com/tupinek/PYX-Optimalization
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PYX-Optimization
+  homepage: https://github.com/tupinek/PYX-Optimization
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/tupinek/PYX-Optimalization
+  repository: git://github.com/tupinek/PYX-Optimization
 version: '0.01'

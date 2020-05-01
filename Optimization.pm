@@ -1,4 +1,4 @@
-package PYX::Optimalization;
+package PYX::Optimization;
 
 use strict;
 use warnings;
@@ -100,7 +100,7 @@ __END__
 
 =head1 NAME
 
-PYX::Optimalization - TODO
+PYX::Optimization - Class for
 
 =head1 SYNOPSIS
 
@@ -149,10 +149,10 @@ TODO
  use strict;
  use warnings;
 
- use PYX::Optimalization;
+ use PYX::Optimization;
 
- # PYX::Optimalization object.
- my $pyx = PYX::Optimalization->new(
+ # PYX::Optimization object.
+ my $pyx = PYX::Optimization->new(
    TODO
  );
 

@@ -5,4 +5,4 @@ use Test::NoWarnings;
 use Test::Pod::Coverage 'tests' => 2;
 
 # Test.
-pod_coverage_ok('PYX::Optimalization', 'PYX::Optimalization is covered.');
+pod_coverage_ok('PYX::Optimization', 'PYX::Optimization is covered.');

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use File::Object;
-use PYX::Optimalization;
+use PYX::Optimization;
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Test::Output;
@@ -11,7 +11,7 @@ use Test::Output;
 my $data_dir = File::Object->new->up->dir('data');
 
 # Test.
-my $obj = PYX::Optimalization->new;
+my $obj = PYX::Optimization->new;
 my $right_ret = <<"END";
 _comment
 _comment

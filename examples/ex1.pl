@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
-use PYX::Optimalization;
+use PYX::Optimization;
 
-# PYX::Optimalization object.
-my $pyx = PYX::Optimalization->new(
+# PYX::Optimization object.
+my $pyx = PYX::Optimization->new(
   TODO
 );
