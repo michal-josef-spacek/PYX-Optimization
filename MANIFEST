@@ -18,6 +18,7 @@ MANIFEST			This list of files
 META.yml
 Optimization.pm
 README
+SIGNATURE
 t/data/ex1.pyx
 t/data/ex2.pyx
 t/data/ex3.pyx
