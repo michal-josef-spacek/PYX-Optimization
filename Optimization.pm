@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Class::Utils qw(set_params);
-use Encode qw(encode);
+use Encode;
 use Error::Pure qw(err);
 use PYX qw(char comment);
 use PYX::Parser;
@@ -82,7 +82,7 @@ sub _data {
 
 	$data = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
-	my $encoded_output = encode(
+	my $encoded_output = Encode::encode(
 		$pyx_parser_obj->{'non_parser_options'}->{'output_encoding'},
 		char($data),
 	);
@@ -100,7 +100,7 @@ sub _comment {
 	$tmp =~ s/[\s\n]*$//s;
 	$comment = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
-	my $encoded_output = encode(
+	my $encoded_output = Encode::encode(
 		$pyx_parser_obj->{'non_parser_options'}->{'output_encoding'},
 		comment($comment),
 	);
