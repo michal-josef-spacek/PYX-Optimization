@@ -3,7 +3,7 @@ use warnings;
 
 use English qw(-no_match_vars);
 use PYX::Optimization;
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Test.
@@ -23,4 +23,5 @@ is($EVAL_ERROR, "Unknown parameter 'something'.\n",
 	"Unknown parameter 'something'.");
 
 # Test.
-# TODO Regular test.
+my $obj = PYX::Optimization->new;
+isa_ok($obj, 'PYX::Optimization');
