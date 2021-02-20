@@ -2,10 +2,12 @@ TODO
 ====
 1. PYX::Optimization navazat na dtd (preserve).
 2. Prepinac pro odstraneni namespace, ktere se tady nepouzivaji.
-4. Improve tests
 5.
 
 Applied
 =======
 3. bin/pyx_optimalization pryc.
 OK [20150126] skim
+
+4. Improve tests
+OK [20210220] skim
