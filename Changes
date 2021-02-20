@@ -1,4 +1,5 @@
 0.03
+ - Add PYX code for data and comment, which are removed.
  - Rewrite implicit encode() to Encode::encode().
  - Update README.
 
