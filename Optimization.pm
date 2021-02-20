@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Class::Utils qw(set_params);
+use Encode qw(encode);
 use Error::Pure qw(err);
 use PYX qw(char comment);
 use PYX::Parser;
@@ -15,6 +16,9 @@ our $VERSION = 0.02;
 sub new {
 	my ($class, @params) = @_;
 	my $self = bless {}, $class;
+
+	# Output encoding.
+	$self->{'output_encoding'} = 'UTF-8';
 
 	# Output handler.
 	$self->{'output_handler'} = \*STDOUT;
@@ -29,6 +33,9 @@ sub new {
 		'callbacks' => {
 			'data' => \&_data,
 			'comment' => \&_comment,
+		},
+		'non_parser_options' => {
+			'output_encoding' => $self->{'output_encoding'},
 		},
 	);
 
@@ -75,7 +82,11 @@ sub _data {
 
 	$data = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
-	print {$out} char($data), "\n";
+	my $encoded_output = encode(
+		$pyx_parser_obj->{'non_parser_options'}->{'output_encoding'},
+		char($data),
+	);
+	print {$out} $encoded_output, "\n";
 }
 
 # Process comment.
@@ -89,7 +100,11 @@ sub _comment {
 	$tmp =~ s/[\s\n]*$//s;
 	$comment = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
-	print {$out} comment($comment), "\n";
+	my $encoded_output = encode(
+		$pyx_parser_obj->{'non_parser_options'}->{'output_encoding'},
+		comment($comment),
+	);
+	print {$out} $encoded_output, "\n";
 }
 
 1;
@@ -124,6 +139,11 @@ Constructor.
 Returns instance of object.
 
 =over 8
+
+=item * C<output_encoding>
+
+Output encoding.
+Default value is 'UTF-8'.
 
 =item * C<output_handler>
 
@@ -218,6 +238,7 @@ Returns undef.
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
+L<Encode>,
 L<Error::Pure>,
 L<PYX>,
 L<PYX::Parser>,

@@ -1,4 +1,6 @@
 0.02
+ - Add 'output_encoding' parameter and fix output encoding for default
+   UTF-8.
  - Fix bugtracker.
  - Rewrite implicit decode() to PYX::Utils::decode().
  - Rewrite implicit encode() to PYX::Utils::encode().
