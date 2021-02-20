@@ -49,24 +49,6 @@ stdout_is(
 
 # Test.
 $right_ret = <<"END";
-_comment
-(tag
-Aattr value
--data
-)tag
-?app vskip="10px"
-END
-stdout_is(
-	sub {
-		$obj->parse_file($data_dir->file('ex3.pyx')->s);
-		return;
-	},
-	$right_ret,
-	'Complex data which are cleaned.',
-);
-
-# Test.
-$right_ret = <<"END";
 -data data
 -data data
 -data data
@@ -81,4 +63,22 @@ stdout_is(
 	},
 	$right_ret,
 	'Different data which are cleaned (multiple).',
+);
+
+# Test.
+$right_ret = <<"END";
+_comment
+(tag
+Aattr value
+-data
+)tag
+?app vskip="10px"
+END
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex3.pyx')->s);
+		return;
+	},
+	$right_ret,
+	'Complex data which are cleaned.',
 );
