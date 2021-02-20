@@ -7,7 +7,7 @@ use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX qw(char comment);
 use PYX::Parser;
-use PYX::Utils qw(encode decode);
+use PYX::Utils qw(encode);
 
 our $VERSION = 0.02;
 
@@ -73,7 +73,7 @@ sub _data {
 	# White space on middle of data.
 	$tmp =~ s/[\s\n]+/\ /sg;
 
-	$data = decode($tmp);
+	$data = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
 	print {$out} char($data), "\n";
 }
@@ -87,7 +87,7 @@ sub _comment {
 	}
 	$tmp =~ s/^[\s\n]*//s;
 	$tmp =~ s/[\s\n]*$//s;
-	$comment = decode($tmp);
+	$comment = PYX::Utils::decode($tmp);
 	my $out = $pyx_parser_obj->{'output_handler'};
 	print {$out} comment($comment), "\n";
 }
