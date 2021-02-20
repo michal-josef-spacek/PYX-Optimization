@@ -1,6 +1,7 @@
 0.02
  - Fix bugtracker.
  - Rewrite implicit decode() to PYX::Utils::decode().
+ - Rewrite implicit encode() to PYX::Utils::encode().
  - Update copyright years.
  - Update examples/ directory.
 

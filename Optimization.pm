@@ -7,7 +7,7 @@ use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX qw(char comment);
 use PYX::Parser;
-use PYX::Utils qw(encode);
+use PYX::Utils;
 
 our $VERSION = 0.02;
 
@@ -57,7 +57,7 @@ sub parse_handler {
 # Process data.
 sub _data {
 	my ($pyx_parser_obj, $data) = @_;
-	my $tmp = encode($data);
+	my $tmp = PYX::Utils::encode($data);
 	if ($tmp =~ /^[\s\n]*$/) {
 		return;
 	}
@@ -81,7 +81,7 @@ sub _data {
 # Process comment.
 sub _comment {
 	my ($pyx_parser_obj, $comment) = @_;
-	my $tmp = encode($comment);
+	my $tmp = PYX::Utils::encode($comment);
 	if ($tmp =~ /^[\s\n]*$/) {
 		return;
 	}
