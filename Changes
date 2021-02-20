@@ -1,6 +1,7 @@
 0.03
  - Add PYX code for data and comment, which are removed.
  - Add descriptions to test cases.
+ - Add tests for parse_handler().
  - Rewrite implicit encode() to Encode::encode().
  - Update README.
 
