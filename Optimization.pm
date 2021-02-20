@@ -46,24 +46,34 @@ sub new {
 # Parse pyx text or array of pyx text.
 sub parse {
 	my ($self, $pyx, $out) = @_;
+
 	$self->{'pyx_parser'}->parse($pyx, $out);
+
+	return;
 }
 
 # Parse file with pyx text.
 sub parse_file {
 	my ($self, $file, $out) = @_;
+
 	$self->{'pyx_parser'}->parse_file($file, $out);
+
+	return;
 }
 
 # Parse from handler.
 sub parse_handler {
 	my ($self, $input_file_handler, $out) = @_;
+
 	$self->{'pyx_parser'}->parse_handler($input_file_handler, $out);
+
+	return;
 }
 
 # Process data.
 sub _data {
 	my ($pyx_parser_obj, $data) = @_;
+
 	my $tmp = PYX::Utils::encode($data);
 	if ($tmp =~ /^[\s\n]*$/) {
 		return;
@@ -87,11 +97,14 @@ sub _data {
 		char($data),
 	);
 	print {$out} $encoded_output, "\n";
+
+	return;
 }
 
 # Process comment.
 sub _comment {
 	my ($pyx_parser_obj, $comment) = @_;
+
 	my $tmp = PYX::Utils::encode($comment);
 	if ($tmp =~ /^[\s\n]*$/) {
 		return;
@@ -105,6 +118,8 @@ sub _comment {
 		comment($comment),
 	);
 	print {$out} $encoded_output, "\n";
+
+	return;
 }
 
 1;
