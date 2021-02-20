@@ -26,6 +26,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Dfferent comments which are cleaned.',
 );
 
 # Test.
@@ -43,6 +44,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Different data which are cleaned (simple).',
 );
 
 # Test.
@@ -60,6 +62,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Complex data which are cleaned.',
 );
 
 # Test.
@@ -77,4 +80,5 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Different data which are cleaned (multiple).',
 );
