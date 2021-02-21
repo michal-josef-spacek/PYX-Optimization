@@ -1,5 +1,6 @@
 0.04
  - Add missing return to code. Add blank line after arguments.
+ - UTF-8 -> utf-8
 
 0.03 2021-02-20T12:38:00+01:00
  - Add PYX code for data and comment, which are removed.

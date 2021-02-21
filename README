@@ -19,7 +19,7 @@ METHODS
 
     *       "output_encoding"
 
-            Output encoding. Default value is 'UTF-8'.
+            Output encoding. Default value is 'utf-8'.
 
     *       "output_handler"
 

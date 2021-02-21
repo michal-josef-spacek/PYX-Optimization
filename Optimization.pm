@@ -18,7 +18,7 @@ sub new {
 	my $self = bless {}, $class;
 
 	# Output encoding.
-	$self->{'output_encoding'} = 'UTF-8';
+	$self->{'output_encoding'} = 'utf-8';
 
 	# Output handler.
 	$self->{'output_handler'} = \*STDOUT;
@@ -158,7 +158,7 @@ Returns instance of object.
 =item * C<output_encoding>
 
 Output encoding.
-Default value is 'UTF-8'.
+Default value is 'utf-8'.
 
 =item * C<output_handler>
 
