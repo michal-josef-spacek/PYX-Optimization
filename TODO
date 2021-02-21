@@ -2,7 +2,8 @@ TODO
 ====
 1. PYX::Optimization navazat na dtd (preserve).
 2. Prepinac pro odstraneni namespace, ktere se tady nepouzivaji.
-5.
+5. Test pro 'output_encoding' iso-8859-2, je potreba testovat jine nez utf8.
+6.
 
 Applied
 =======
