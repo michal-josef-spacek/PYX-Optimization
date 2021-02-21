@@ -28,6 +28,7 @@ sub new {
 
 	# PYX::Parser object.
 	$self->{'pyx_parser'} = PYX::Parser->new(
+		'output_encoding' => $self->{'output_encoding'},
 		'output_handler' => $self->{'output_handler'},
 		'output_rewrite' => 1,
 		'callbacks' => {

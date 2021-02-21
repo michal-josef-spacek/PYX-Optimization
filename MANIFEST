@@ -24,6 +24,8 @@ t/data/ex2.pyx
 t/data/ex3.pyx
 t/data/ex4.pyx
 t/data/ex5.pyx
+t/data/ex6.pyx
+t/data/ex7.pyx
 t/PYX-Optimization/01-use.t
 t/PYX-Optimization/02-version.t
 t/PYX-Optimization/04-new.t

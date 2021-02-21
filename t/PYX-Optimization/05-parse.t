@@ -2,9 +2,10 @@ use strict;
 use warnings;
 
 use PYX::Optimization;
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 use Test::Output;
+use Unicode::UTF8 qw(decode_utf8);
 
 # Test.
 my $obj = PYX::Optimization->new;
@@ -111,4 +112,53 @@ END
 	},
 	$right_ret,
 	'Complex data which are cleaned.',
+);
+
+# Test.
+$right_ret = <<'END';
+-žluťoučký
+-žluťoučký
+-žluťoučký
+-žluťoučký
+-žluťoučký
+-žluťoučký
+END
+stdout_is(
+	sub {
+		my $data = decode_utf8(<<'END');
+-žluťoučký
+-   žluťoučký
+-žluťoučký   
+-\nžluťoučký
+-žluťoučký\n
+-   \n   žluťoučký   \n   
+-   \n
+END
+		$obj->parse($data);
+		return;
+	},
+	$right_ret,
+	'Different data which are cleaned (simple - utf8).',
+);
+
+# Test.
+$right_ret = <<'END';
+(žlutá
+Aattr červená
+)žlutá
+?app color=červená
+END
+stdout_is(
+	sub {
+		my $data = decode_utf8(<<'END');
+(žlutá
+Aattr červená
+)žlutá
+?app color=červená
+END
+		$obj->parse($data);
+		return;
+	},
+	$right_ret,
+	'PYX rewrite in utf8.',
 );

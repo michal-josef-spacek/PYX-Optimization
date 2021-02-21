@@ -19,7 +19,7 @@ recursive_author_tests('xt');
 requires 'Class::Utils' => 0.05;
 requires 'Error::Pure' => 0.15;
 requires 'PYX' => 0.01;
-requires 'PYX::Parser' => 0.01;
+requires 'PYX::Parser' => 0.08;
 requires 'PYX::Utils' => 0.01;
 requires 'perl' => '5.6.2';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/PYX-Optimization/issues';
@@ -31,6 +31,7 @@ test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 test_requires 'Test::Pod' => 0;
 test_requires 'Test::Pod::Coverage' => 0;
+test_requires 'Unicode::UTF8' => 0;
 tests_recursive;
 version '0.04';
 
