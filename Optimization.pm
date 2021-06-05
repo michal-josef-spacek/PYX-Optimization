@@ -139,7 +139,7 @@ PYX::Optimization - PYX optimization Perl class.
 
  use PYX::Optimization;
 
- my $obj = PYX::Parser->new(%parameters);
+ my $obj = PYX::Optimization->new(%parameters);
  $obj->parse($pyx, $out);
  $obj->parse_file($pyx_file, $out);
  $obj->parse_handle($pyx_file_handler, $out);
@@ -148,7 +148,7 @@ PYX::Optimization - PYX optimization Perl class.
 
 =head2 C<new>
 
- my $obj = PYX::Parser->new(%parameters);
+ my $obj = PYX::Optimization->new(%parameters);
 
 Constructor.
 

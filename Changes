@@ -1,4 +1,5 @@
 0.05
+ - Fix constructor call in doc.
 
 0.04 2021-02-21T02:41:29+01:00
  - Add missing return to code. Add blank line after arguments.
