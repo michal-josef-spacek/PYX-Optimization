@@ -1,5 +1,6 @@
 0.05
  - Fix constructor call in doc.
+ - Fix Makefile.PL fails with no '.' in @INC.
  - Update Module::Install to 1.21 version.
 
 0.04 2021-02-21T02:41:29+01:00
