@@ -168,13 +168,15 @@ Default value is STDOUT.
 
 =back
 
+Returns instance of object.
+
 =head2 C<parse>
 
  $obj->parse($pyx, $out);
 
-Optimize PYX string $pyx.
+Optimize PYX defined by string C<$pyx>.
 Output print to output handler.
-If $out not present, use 'output_handler'.
+If C<$out> not present, use 'output_handler'.
 
 Returns undef.
 
@@ -182,9 +184,9 @@ Returns undef.
 
  $obj->parse_file($pux_file, $out);
 
-Optimize PYX file $pyx_file.
+Optimize PYX defined by file C<$pyx_file>.
 Output print to output handler.
-If $out not present, use 'output_handler'.
+If C<$out> not present, use 'output_handler'.
 
 Returns undef.
 
@@ -192,9 +194,9 @@ Returns undef.
 
  $obj->parse_handler($pyx_file_handler, $out);
 
-Optimize PYX file handler $pyx_file_handler.
+Optimize PYX defined by file handler C<$pyx_file_handler>.
 Output print to output handler.
-If $out not present, use 'output_handler'.
+If C<$out> not present, use 'output_handler'.
 
 Returns undef.
 

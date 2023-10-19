@@ -25,27 +25,29 @@ METHODS
 
             Output handler. Default value is STDOUT.
 
+    Returns instance of object.
+
   "parse"
      $obj->parse($pyx, $out);
 
-    Optimize PYX string $pyx. Output print to output handler. If $out not
-    present, use 'output_handler'.
+    Optimize PYX defined by string $pyx. Output print to output handler. If
+    $out not present, use 'output_handler'.
 
     Returns undef.
 
   "parse_file"
      $obj->parse_file($pux_file, $out);
 
-    Optimize PYX file $pyx_file. Output print to output handler. If $out not
-    present, use 'output_handler'.
+    Optimize PYX defined by file $pyx_file. Output print to output handler.
+    If $out not present, use 'output_handler'.
 
     Returns undef.
 
   "parse_handler"
      $obj->parse_handler($pyx_file_handler, $out);
 
-    Optimize PYX file handler $pyx_file_handler. Output print to output
-    handler. If $out not present, use 'output_handler'.
+    Optimize PYX defined by file handler $pyx_file_handler. Output print to
+    output handler. If $out not present, use 'output_handler'.
 
     Returns undef.
 
