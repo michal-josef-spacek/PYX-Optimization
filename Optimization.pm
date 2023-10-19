@@ -208,6 +208,8 @@ Returns undef.
 
 =head1 EXAMPLE1
 
+=for comment filename=remove_whitespace_from_comments.pl
+
  use strict;
  use warnings;
 
@@ -236,6 +238,8 @@ Returns undef.
  # )element
 
 =head1 EXAMPLE2
+
+=for comment filename=run_on_pyx_file.pl
 
  use strict;
  use warnings;
