@@ -142,7 +142,7 @@ PYX::Optimization - PYX optimization Perl class.
  my $obj = PYX::Optimization->new(%parameters);
  $obj->parse($pyx, $out);
  $obj->parse_file($pyx_file, $out);
- $obj->parse_handle($pyx_file_handler, $out);
+ $obj->parse_handler($pyx_file_handler, $out);
 
 =head1 METHODS
 
@@ -190,7 +190,7 @@ Returns undef.
 
 =head2 C<parse_handler>
 
- $obj->parse_handle($pyx_file_handler, $out);
+ $obj->parse_handler($pyx_file_handler, $out);
 
 Optimize PYX file handler $pyx_file_handler.
 Output print to output handler.
