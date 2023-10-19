@@ -152,8 +152,6 @@ PYX::Optimization - PYX optimization Perl class.
 
 Constructor.
 
-Returns instance of object.
-
 =over 8
 
 =item * C<output_encoding>

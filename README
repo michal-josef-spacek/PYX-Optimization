@@ -15,8 +15,6 @@ METHODS
 
     Constructor.
 
-    Returns instance of object.
-
     *       "output_encoding"
 
             Output encoding. Default value is 'utf-8'.
